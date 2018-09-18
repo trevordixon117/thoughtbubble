@@ -22,7 +22,7 @@
     <!-- Thought bubbles can scale if we add "transform: scale(0.5)" -->
     <div class="container">
         <!-- Problem -->
-        <h1 class="ProblemBox display-1"> This is an example problem. <br> What is the solution? </h1>
+        <h1 id="problemBox" class="ProblemBox display-1"> This is an example problem. <br> What is the solution? </h1>
 
         <!-- Total Timer -->
         <div class="top-right">12:12</div>
@@ -37,31 +37,13 @@
             <div class="input-group input-group-lg footer mb-3 flex-grow-1">
                 <input type="text" id="suggestionBox" class="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="onSubmit()">Submit</button>
+                    <button id="suggestionSubmitBtn" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="onSubmit()">Submit</button>
                 </div>
             </div>
         </div>
 
         <!-- Thought bubbles -->
-        <div id="bubbleContainer" class="d-flex justify-content-start">
-            <div class="p-2">
-                <i class="hovicon effect-8">b1</i>
-            </div>
-            <div class="p-2">
-                <i class="hovicon effect-8">b2</i>
-            </div>
-            <div class="p-2">
-                <i class="hovicon effect-8">b3</i>
-            </div>
-            <div class="p-2">
-                <i class="hovicon effect-8">b4</i>
-            </div>
-            <div class="p-2">
-                <i class="hovicon effect-8">b5</i>
-            </div>
-            <div class="p-2">
-                <i class="hovicon effect-8">b6</i>
-            </div>
+        <div id="bubbleContainer" class="d-flex flex-wrap justify-content-start">
         </div>
     </div>
 
