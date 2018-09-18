@@ -6,10 +6,13 @@ Darker - 23403A
 Brighter - 7EE5D0
 */
 
+body {
+    background: #D1D5E5;
+}
 
 .ProblemBox {
     position: absolute;
-    background: cyan;
+    background: #B8EDFF;
     border: 4px solid lightblue;
     border-radius: 14px;
     left: 20%;
