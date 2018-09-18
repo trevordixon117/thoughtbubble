@@ -1,0 +1,27 @@
+body {
+    background: #23403A
+}
+
+.button {
+    position: absolute;
+    background: #69BFAE;
+    border: 4px solid #467F74;
+    border-radius: 14px;
+    text-align: center;
+}
+
+#userButton {
+    left: 20%;
+    width: 20%;
+    top: 40%;
+    height: 20%;
+    font-size: 5vmin;
+}
+
+#hostButton {
+    left: 60%;
+    width: 20%;
+    top: 40%;
+    height: 20%;
+    font-size: 5vmin;
+}
