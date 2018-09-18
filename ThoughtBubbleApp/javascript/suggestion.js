@@ -3,7 +3,8 @@ var bubbles = [];
 
 /* Element declarations */
 var suggestionBox = document.getElementById("suggestionBox");
-var bubbleContainer = document.getElementById("bubbleContainer");
+var bubbleContainer1 = document.getElementById("bubbleContainer1");
+var bubbleContainer2 = document.getElementById("bubbleContainer2");
 var problemBox = document.getElementById("problemBox");
 
 /* ID declarations */
@@ -25,15 +26,12 @@ function onSubmit() {
 
     //only add a new bubble if there's text in the input box...
     if(thought) {
-        console.log("submission: " + thought);
         var bubbleData = {
             text: thought,
-            id: bubbleContainer.childElementCount + 1
+            id: bubbleContainer1.childElementCount + 1
         };
         bubbles.push(bubbleData);
         addBubbleToPage();
-
-        console.log(bubbles);
     }
 }
 
@@ -49,21 +47,28 @@ function addBubbleToPage() {
     });
 
     //id the bubble as currentNumberOfBubbles + 1
-    var bubbleCount = bubbleContainer.childElementCount;
+    var bubbleCount = bubbleContainer1.childElementCount + bubbleContainer2.childElementCount;
     bubble.id = bubbleIDStub + (bubbleCount + 1);
     bubble.innerText = bubbleCount + 1;
 
     bubbleWrapper.appendChild(bubble);
-    bubbleContainer.appendChild(bubbleWrapper);
+    bubbleContainer1.appendChild(bubbleWrapper);
 
-    console.log("overlap: " + bubbleIsOverlapping());
+    positionBubbleWithoutOverlap(bubbleWrapper);
 }
 
-function bubbleIsOverlapping() {
-    var bubbleID = bubbleIDStub + bubbles[bubbles.length-1].id;
+//moves the bubble to the right until there's no longer overlap
+function positionBubbleWithoutOverlap(bubble) {
+    if(bubbleIsOverlapping(bubble)) {
+        console.log("overlap");
+        bubbleContainer2.appendChild(bubble);
+        bubbleContainer1.removeChild(bubble);
+    }
+}
 
+function bubbleIsOverlapping(bubble) {
     //store the bounds of each element
-    var bubbleBounds = document.getElementById(bubbleID).getBoundingClientRect();
+    var bubbleBounds = bubble.getBoundingClientRect();
     var problemBounds = problemBox.getBoundingClientRect();
 
     //return true if there's overlap, false if there's not
