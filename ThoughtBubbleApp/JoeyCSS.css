@@ -19,3 +19,9 @@ Brighter - 7EE5D0
     height: 20%;
     font-size: 4vw;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
