@@ -47,12 +47,11 @@ body {
     position: fixed;
     bottom: 0;
     left: 5%;
-    width: 8%;
-    height: 6.5%;
     border: 1px solid black;
     border-radius: 20px;
     font-size: 2vw;
     text-align: center;
+
 }
 
 #b1 {
