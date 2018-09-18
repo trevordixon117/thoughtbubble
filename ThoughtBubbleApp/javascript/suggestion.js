@@ -48,7 +48,7 @@ function addBubbleToPage() {
         bubble.classList.add(item);
     });
 
-    //id the bubble as currentNumberOfBubbles
+    //id the bubble as currentNumberOfBubbles + 1
     var bubbleCount = bubbleContainer.childElementCount;
     bubble.id = bubbleIDStub + (bubbleCount + 1);
     bubble.innerText = bubbleCount + 1;
@@ -62,9 +62,11 @@ function addBubbleToPage() {
 function bubbleIsOverlapping() {
     var bubbleID = bubbleIDStub + bubbles[bubbles.length-1].id;
 
+    //store the bounds of each element
     var bubbleBounds = document.getElementById(bubbleID).getBoundingClientRect();
     var problemBounds = problemBox.getBoundingClientRect();
 
+    //return true if there's overlap, false if there's not
     return !(bubbleBounds.right < problemBounds.left ||
                     bubbleBounds.left > problemBounds.right ||
                     bubbleBounds.bottom < problemBounds.top ||
