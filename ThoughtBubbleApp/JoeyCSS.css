@@ -7,13 +7,13 @@ Brighter - 7EE5D0
 */
 
 body {
-    background: #D1D5E5;
+    background: #23403A
 }
 
 .ProblemBox {
     position: absolute;
-    background: #B8EDFF;
-    border: 4px solid lightblue;
+    background: #69BFAE;
+    border: 4px solid #467F74;
     border-radius: 14px;
     left: 20%;
     width: 60%;
@@ -28,7 +28,6 @@ body {
     bottom: 0;
     width: 80%;
 }
-
 .top-right {
     background: lightgray;
     position: fixed;
@@ -54,4 +53,28 @@ body {
     border-radius: 20px;
     font-size: 2vw;
     text-align: center;
+}
+
+#b1 {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
+#b2 {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
+
+#b3 {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+
+#b4 {
+    position: absolute;
+    left: 80%;
+    top: 20%;
 }
