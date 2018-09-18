@@ -9,10 +9,9 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!--- BOOTSTRAP CSS--->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <link href="stylesheets/bubble.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/suggestion.css" rel="stylesheet" type="text/css">
@@ -23,7 +22,9 @@
     <div class="container">
 
         <!-- Total Timer -->
-        <div class="top-right">12:12</div>
+        <div class="top-right-title">Meeting Time</div>
+        <div class="top-right-time">00:60:00</div>
+
 
         <!-- Problem -->
         <h1 id="problemBox" class="ProblemBox display-1"> This is an example problem. <br> What is the solution? </h1>
@@ -31,15 +32,13 @@
         <!-- Bottom bar -->
         <div class="d-flex justify-content-start">
 
-            <!-- Current Timer -->
-            <div class="bottom-left mb-3 align-middle px-2">12:12</div>
-
             <!-- Thought input -->
             <div class="input-group input-group-lg footer mb-3 flex-grow-1">
                 <input type="text" id="suggestionBox" class="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button id="suggestionSubmitBtn" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="onSubmit()">Submit</button>
+                    <button id="suggestionSubmitBtn" class="btn btn-success" type="button" id="button-addon2" onclick="onSubmit()">Submit</button>
                 </div>
+                <div class="active-timer">00:60:00</div>
             </div>
         </div>
 

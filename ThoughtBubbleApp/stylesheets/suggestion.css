@@ -33,12 +33,13 @@ body {
     bottom: 0;
     width: 80%;
 }
-.top-right {
+
+.top-right-title {
     background: lightgray;
     position: fixed;
     top: 0;
-    right: 0;
-    width: 8%;
+    right: 8%;
+    width: 13%;
     height: 7%;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
@@ -47,38 +48,24 @@ body {
     text-align: center;
 }
 
-.bottom-left {
-    background: floralwhite;
+.top-right-time {
+    background: lightgray;
     position: fixed;
-    bottom: 0;
-    left: 5%;
-    border: 1px solid black;
-    border-radius: 20px;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
     font-size: 2vw;
     text-align: center;
-
 }
 
-#b1 {
-    position: absolute;
-    left: 20%;
-    top: 20%;
-}
-
-#b2 {
-    position: absolute;
-    left: 40%;
-    top: 20%;
-}
-
-#b3 {
-    position: absolute;
-    left: 60%;
-    top: 20%;
-}
-
-#b4 {
-    position: absolute;
-    left: 80%;
-    top: 20%;
+.active-timer {
+    background: lightgray;
+    width: 12%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 2vw;
+    text-align: center;
 }
