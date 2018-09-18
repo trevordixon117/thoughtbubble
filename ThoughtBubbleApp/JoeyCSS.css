@@ -28,6 +28,32 @@ body {
     bottom: 0;
     width: 80%;
 }
+.top-right {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom-left-radius: 20px;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.bottom-left {
+    background: floralwhite;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    width: 8%;
+    height: 6.5%;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 2vw;
+    text-align: center;
+}
 
 #b1 {
     position: absolute;
