@@ -1,0 +1,11 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.container.circle-border {
+    border-radius: 100%;
+    background: gray;
+    height: auto;
+    width: 60%;
+}
