@@ -57,7 +57,7 @@ function addBubbleToPage() {
     positionBubbleWithoutOverlap(bubbleWrapper);
 }
 
-//moves the bubble to the right until there's no longer overlap
+//moves the bubble to container2 if it overlaps in container1
 function positionBubbleWithoutOverlap(bubble) {
     if(bubbleIsOverlapping(bubble)) {
         console.log("overlap");
@@ -73,7 +73,7 @@ function bubbleIsOverlapping(bubble) {
 
     //return true if there's overlap, false if there's not
     return !(bubbleBounds.right < problemBounds.left ||
-                    bubbleBounds.left > problemBounds.right ||
-                    bubbleBounds.bottom < problemBounds.top ||
-                    bubbleBounds.top > problemBounds.bottom);
+             bubbleBounds.left > problemBounds.right ||
+             bubbleBounds.bottom < problemBounds.top ||
+             bubbleBounds.top > problemBounds.bottom);
 }
