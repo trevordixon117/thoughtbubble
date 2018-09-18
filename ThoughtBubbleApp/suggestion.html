@@ -35,15 +35,15 @@
 
             <!-- Thought input -->
             <div class="input-group input-group-lg footer mb-3 flex-grow-1">
-                <input type="text" class="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2">
+                <input type="text" id="suggestionBox" class="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="onSubmit()">Submit</button>
                 </div>
             </div>
         </div>
 
         <!-- Thought bubbles -->
-        <div class="d-flex justify-content-start">
+        <div id="bubbleContainer" class="d-flex justify-content-start">
             <div class="p-2">
                 <i class="hovicon effect-8">b1</i>
             </div>
@@ -65,5 +65,7 @@
         </div>
     </div>
 
+    <!-- Javascript file -->
+    <script src="javascript/suggestion.js"></script>
 </body>
 </html>
