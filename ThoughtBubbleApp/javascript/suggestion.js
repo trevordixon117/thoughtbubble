@@ -4,6 +4,7 @@ var bubbles = [];
 /* Element declarations */
 var suggestionBox = document.getElementById("suggestionBox");
 var bubbleContainer = document.getElementById("bubbleContainer");
+var problemBox = document.getElementById("problemBox");
 
 /* ID declarations */
 const bubbleIDStub = 'bubble';
@@ -12,14 +13,27 @@ const bubbleIDStub = 'bubble';
 const bubbleClasses = ['hovicon', 'effect-8'];
 
 
-/* Functions */
+//submit thought when the user presses 'enter'
+suggestionBox.addEventListener("keypress", function(e) {
+    if(e.charCode === 13) {
+        onSubmit();
+    }
+})
+
 function onSubmit() {
     var thought = suggestionBox.value;
 
-    //don't do anything if there's no thought in the input...
+    //only add a new bubble if there's text in the input box...
     if(thought) {
         console.log("submission: " + thought);
+        var bubbleData = {
+            text: thought,
+            id: bubbleContainer.childElementCount + 1
+        };
+        bubbles.push(bubbleData);
         addBubbleToPage();
+
+        console.log(bubbles);
     }
 }
 
@@ -34,15 +48,27 @@ function addBubbleToPage() {
         bubble.classList.add(item);
     });
 
-    //id the bubble as currentNumberOfBubbles
+    //id the bubble as currentNumberOfBubbles + 1
     var bubbleCount = bubbleContainer.childElementCount;
     bubble.id = bubbleIDStub + (bubbleCount + 1);
     bubble.innerText = bubbleCount + 1;
 
     bubbleWrapper.appendChild(bubble);
     bubbleContainer.appendChild(bubbleWrapper);
+
+    console.log("overlap: " + bubbleIsOverlapping());
 }
 
-//      <div class="p-2">
-//          <i class="hovicon effect-8">b1</i>
-//      </div>
+function bubbleIsOverlapping() {
+    var bubbleID = bubbleIDStub + bubbles[bubbles.length-1].id;
+
+    //store the bounds of each element
+    var bubbleBounds = document.getElementById(bubbleID).getBoundingClientRect();
+    var problemBounds = problemBox.getBoundingClientRect();
+
+    //return true if there's overlap, false if there's not
+    return !(bubbleBounds.right < problemBounds.left ||
+                    bubbleBounds.left > problemBounds.right ||
+                    bubbleBounds.bottom < problemBounds.top ||
+                    bubbleBounds.top > problemBounds.bottom);
+}
