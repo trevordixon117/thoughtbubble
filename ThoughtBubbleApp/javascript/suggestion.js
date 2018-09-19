@@ -6,6 +6,7 @@ var suggestionBox = document.getElementById("suggestionBox");
 var bubbleContainer1 = document.getElementById("bubbleContainer1");
 var bubbleContainer2 = document.getElementById("bubbleContainer2");
 var problemBox = document.getElementById("problemBox");
+var thoughtDisplay = document.getElementById("thoughtDisplay");
 
 /* ID declarations */
 const bubbleIDStub = 'bubble';
@@ -19,7 +20,16 @@ suggestionBox.addEventListener("keypress", function(e) {
     if(e.charCode === 13) {
         onSubmit();
     }
-})
+});
+
+//display the thought   ***ADD EVENT LISTENER***
+function displayThought(bubbleID) {
+    //grab the index from the end of the id (e.g. if the id is 'bubble15', we just want to get the substring beyond 'bubble')
+    //subtract 1 because ID's are 1-infinity, but their indexes are 0-infinity
+    var index = bubbleID.substring(bubbleIDStub.length) - 1;
+
+    thoughtDisplay.innerText = bubbles[index].text;
+}
 
 function onSubmit() {
     console.log('hi');
@@ -78,6 +88,10 @@ function addBubbleToPage() {
 
     bubbleWrapper.appendChild(bubble);
     bubbleContainer1.appendChild(bubbleWrapper);
+
+    bubble.addEventListener("click", function(e) {
+        displayThought(bubble.id);
+    });
 
     positionBubbleWithoutOverlap(bubbleWrapper);
 }

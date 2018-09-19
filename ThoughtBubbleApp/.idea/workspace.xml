@@ -4,8 +4,6 @@
     <list default="true" id="c089f770-d905-4b31-9c8c-f097f6bb5a64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript/suggestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/suggestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stylesheets/bubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/bubble.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stylesheets/suggestion.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/suggestion.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/suggestion.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,16 +42,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1337" />
-          <entry key="html" value="1370" />
-          <entry key="js" value="3489" />
+          <entry key="css" value="1342" />
+          <entry key="html" value="1594" />
+          <entry key="js" value="4074" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1337" />
-          <entry key="HTML" value="1370" />
-          <entry key="JavaScript" value="3489" />
+          <entry key="CSS" value="1342" />
+          <entry key="HTML" value="1594" />
+          <entry key="JavaScript" value="4074" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -62,11 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suggestion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
+            <state relative-caret-position="148">
+              <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -74,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/suggestion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+            <state relative-caret-position="493">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -110,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stylesheets/suggestion.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="56" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -160,10 +158,10 @@
         <option value="$PROJECT_DIR$/stylesheets/thoughtDisplay.html" />
         <option value="$PROJECT_DIR$/stylesheets/thoughtDisplay.css" />
         <option value="$PROJECT_DIR$/thoughtDisplay.html" />
-        <option value="$PROJECT_DIR$/javascript/suggestion.js" />
-        <option value="$PROJECT_DIR$/suggestion.html" />
         <option value="$PROJECT_DIR$/stylesheets/bubble.css" />
         <option value="$PROJECT_DIR$/stylesheets/suggestion.css" />
+        <option value="$PROJECT_DIR$/javascript/suggestion.js" />
+        <option value="$PROJECT_DIR$/suggestion.html" />
       </list>
     </option>
   </component>
@@ -238,12 +236,12 @@
       <workItem from="1537218509427" duration="3930000" />
       <workItem from="1537279279273" duration="8007000" />
       <workItem from="1537298003011" duration="8080000" />
-      <workItem from="1537372585072" duration="3158000" />
+      <workItem from="1537372585072" duration="5196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23175000" />
+    <option name="totallyTimeSpent" value="25213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -321,23 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/suggestion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suggestion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/bubble.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -347,8 +328,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/suggestion.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        <state relative-caret-position="272">
+          <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="56" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/suggestion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suggestion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
         </state>
       </provider>
     </entry>
