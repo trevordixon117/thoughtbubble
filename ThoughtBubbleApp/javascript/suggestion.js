@@ -44,6 +44,9 @@ function onSubmit() {
         bubbles.push(bubbleData);
         addBubbleToPage();
 
+        //clear the submission box
+        suggestionBox.value = "";
+
 
         /*To Do: Send data to server
 
