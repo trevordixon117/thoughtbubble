@@ -6,6 +6,7 @@ var suggestionBox = document.getElementById("suggestionBox");
 var bubbleContainer1 = document.getElementById("bubbleContainer1");
 var bubbleContainer2 = document.getElementById("bubbleContainer2");
 var problemBox = document.getElementById("problemBox");
+var thoughtDisplay = document.getElementById("thoughtDisplay");
 
 /* ID declarations */
 const bubbleIDStub = 'bubble';
@@ -19,20 +20,57 @@ suggestionBox.addEventListener("keypress", function(e) {
     if(e.charCode === 13) {
         onSubmit();
     }
-})
+});
+
+//display the thought   ***ADD EVENT LISTENER***
+function displayThought(bubbleID) {
+    //grab the index from the end of the id (e.g. if the id is 'bubble15', we just want to get the substring beyond 'bubble')
+    //subtract 1 because ID's are 1-infinity, but their indexes are 0-infinity
+    var index = bubbleID.substring(bubbleIDStub.length) - 1;
+
+    thoughtDisplay.innerText = bubbles[index].text;
+}
 
 function onSubmit() {
+    console.log('hi');
     var thought = suggestionBox.value;
 
-    //only add a new bubble if there's text in the input box...
-    if(thought) {
+    //only add a new bubble if there's text in the input box and the same thought hasn't already been submitted...
+    if(thought && thoughtIsUnique(thought)) {
         var bubbleData = {
             text: thought,
             id: bubbleContainer1.childElementCount + 1
         };
         bubbles.push(bubbleData);
         addBubbleToPage();
+
+        //clear the submission box
+        suggestionBox.value = "";
+
+
+        /*To Do: Send data to server
+
+
+
+
+
+
+         */
     }
+}
+
+//looks through all submitted bubbles and returns true if none of them have the same text as thought.text
+function thoughtIsUnique(thought) {
+    var isUnique = true;
+
+    bubbles.forEach(item => {
+        if(item.text === thought) {
+            isUnique = false;
+            console.log('found duplicate');
+        }
+    });
+
+    return isUnique;
 }
 
 function addBubbleToPage() {
@@ -54,6 +92,10 @@ function addBubbleToPage() {
     bubbleWrapper.appendChild(bubble);
     bubbleContainer1.appendChild(bubbleWrapper);
 
+    bubble.addEventListener("click", function(e) {
+        displayThought(bubble.id);
+    });
+
     positionBubbleWithoutOverlap(bubbleWrapper);
 }
 
@@ -61,8 +103,8 @@ function addBubbleToPage() {
 function positionBubbleWithoutOverlap(bubble) {
     if(bubbleIsOverlapping(bubble)) {
         console.log("overlap");
-        bubbleContainer2.appendChild(bubble);
         bubbleContainer1.removeChild(bubble);
+        bubbleContainer2.appendChild(bubble);
     }
 }
 
