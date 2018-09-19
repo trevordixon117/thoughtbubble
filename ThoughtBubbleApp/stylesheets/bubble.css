@@ -579,6 +579,7 @@ body {
     -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
     -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
     transition: transform ease-out 0.1s, background 0.2s;
+    margin: 0;
 }
 .hovicon.effect-8:after {
     top: 0;

@@ -28,6 +28,11 @@ body {
     top: 62%;
 }
 
+.bContainerOffset {
+    position: fixed;
+    top: 7%;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -44,6 +49,36 @@ body {
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-bottom-left-radius: 20px;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.top-middle-banner {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    left: 17.5%;
+    height: 7%;
+    width: 60%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    font-size: 1.5vw;
+    text-align: left;
+}
+
+.top-left-title {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom-right-radius: 20px;
     font-size: 2vw;
     text-align: center;
 }

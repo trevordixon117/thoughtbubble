@@ -22,17 +22,42 @@ suggestionBox.addEventListener("keypress", function(e) {
 })
 
 function onSubmit() {
+    console.log('hi');
     var thought = suggestionBox.value;
 
-    //only add a new bubble if there's text in the input box...
-    if(thought) {
+    //only add a new bubble if there's text in the input box and the same thought hasn't already been submitted...
+    if(thought && thoughtIsUnique(thought)) {
         var bubbleData = {
             text: thought,
             id: bubbleContainer1.childElementCount + 1
         };
         bubbles.push(bubbleData);
         addBubbleToPage();
+
+
+        /*To Do: Send data to server
+
+
+
+
+
+
+         */
     }
+}
+
+//looks through all submitted bubbles and returns true if none of them have the same text as thought.text
+function thoughtIsUnique(thought) {
+    var isUnique = true;
+
+    bubbles.forEach(item => {
+        if(item.text === thought) {
+            isUnique = false;
+            console.log('found duplicate');
+        }
+    });
+
+    return isUnique;
 }
 
 function addBubbleToPage() {
@@ -61,8 +86,8 @@ function addBubbleToPage() {
 function positionBubbleWithoutOverlap(bubble) {
     if(bubbleIsOverlapping(bubble)) {
         console.log("overlap");
-        bubbleContainer2.appendChild(bubble);
         bubbleContainer1.removeChild(bubble);
+        bubbleContainer2.appendChild(bubble);
     }
 }
 
