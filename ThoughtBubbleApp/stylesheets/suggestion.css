@@ -39,7 +39,7 @@ body {
     width: 80%;
 }
 
-.top-right-title {
+#top-right-title {
     background: lightgray;
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ body {
     text-align: center;
 }
 
-.top-right-time {
+#top-right-timer {
     background: lightgray;
     position: fixed;
     top: 0;
@@ -96,7 +96,7 @@ body {
     text-align: center;
 }
 
-.active-timer {
+#active-timer {
     background: lightgray;
     width: 12%;
     border-top-right-radius: 5px;
