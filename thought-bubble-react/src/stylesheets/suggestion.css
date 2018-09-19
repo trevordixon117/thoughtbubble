@@ -1,0 +1,106 @@
+/* Colors
+Dull - 69BFAE
+Dark - 467F74 
+Bright - 8CFFE8
+Darker - 23403A
+Brighter - 7EE5D0
+*/
+
+body {
+    background: #23403A
+}
+
+.ProblemBox {
+    position: fixed;
+    background: #69BFAE;
+    border: 4px solid #467F74;
+    border-radius: 14px;
+    left: 20%;
+    width: 60%;
+    text-align: center;
+    top: 40%;
+    height: 20%;
+    font-size: 5vh;
+}
+
+.bubble2 {
+    position: fixed;
+    top: 62%;
+}
+
+.bContainerOffset {
+    position: fixed;
+    top: 7%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
+
+#top-right-title {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    right: 8%;
+    width: 13%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom-left-radius: 20px;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.top-middle-banner {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    left: 17.5%;
+    height: 7%;
+    width: 60%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    font-size: 1.5vw;
+    text-align: left;
+}
+
+.top-left-title {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom-right-radius: 20px;
+    font-size: 2vw;
+    text-align: center;
+}
+
+#top-right-timer {
+    background: lightgray;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 7%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    font-size: 2vw;
+    text-align: center;
+}
+
+#active-timer {
+    background: lightgray;
+    width: 12%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 2vw;
+    text-align: center;
+}
