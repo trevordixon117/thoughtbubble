@@ -40,7 +40,7 @@
               <br style="clear:both">
                   <div class="form-group">
                   <label for="exampleSelect1">Name:</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                  <input type="text" class="form-control" id="hostName" name="name" placeholder="Name" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleSelect1">Title/ID:</label>
@@ -121,7 +121,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button onclick="location.href='suggestion.html'" type="button" class="btn btn-primary">Start Meeting</button>
+            <button onclick="startMeeting()" type="button" id="hostStart" class="btn btn-primary">Start Meeting</button>
           </div>
         </div>
       </div>
@@ -148,16 +148,18 @@
             </div>
             <div class="form-group">
               <label for="exampleSelect1">Name:</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+              <input type="text" class="form-control" id="userName" name="name" placeholder="Name" required>
             </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button onclick="location.href='suggestion.html'"type="button" class="btn btn-primary btn-info">Join Room</a></button>
+            <button onclick="joinMeeting()"type="button" class="btn btn-primary btn-info">Join Room</a></button>
           </div>
         </div>
       </div>
     </div>
+
+<script src="javascript/entrypoint.js"></script>
 </body>
 </html>

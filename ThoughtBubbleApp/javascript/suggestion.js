@@ -1,3 +1,5 @@
+window.onload = init;
+
 /* Global Variables */
 var bubbles = [];
 
@@ -13,6 +15,15 @@ const bubbleIDStub = 'bubble';
 
 /* Class declarations */
 const bubbleClasses = ['hovicon', 'effect-8'];
+
+
+//set up user data
+function init() {
+    var isHost = localStorage.getItem("isHost");
+    var name = localStorage.getItem("name");
+    console.log("is host: " + isHost);
+    console.log("name: " + name);
+}
 
 
 //submit thought when the user presses 'enter'
