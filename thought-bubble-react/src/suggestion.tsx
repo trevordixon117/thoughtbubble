@@ -1,8 +1,40 @@
 import * as React from 'react';
+import Timer from './timer';
 
-class Suggestion extends React.Component {
+interface IAppState {
+    meetingTimer: Timer,
+    activeTimer: Timer,
+    meetingTime: string,
+    activeTime: string,
+    intervalID: any
+}
+
+class Suggestion extends React.Component<{}, IAppState> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            activeTime: "",
+            activeTimer: new Timer(0,5,0),
+            intervalID: 0,
+            meetingTime: "",
+            meetingTimer: new Timer(1,0,0)
+        };
+    }
+
+    public componentDidMount() {
+        const intervalId = setInterval(this.updateTimers, 1000);
+        this.setState({intervalID: intervalId});
+    }
+
+
+
     public onSubmit() {
         console.log('submit');
+    }
+
+    public updateTimers = () => {
+        this.setState({meetingTime: this.state.meetingTimer.tickDown()});
+        this.setState({activeTime: this.state.activeTimer.tickDown()});
     }
 
     public render() {
@@ -12,7 +44,7 @@ class Suggestion extends React.Component {
 
                 {/*Total timer*/}
                 <div id="top-right-title">Meeting Time</div>
-                <div id="top-right-timer"/>
+                <div id="top-right-timer">{this.state.meetingTimer.display()}</div>
 
                 {/*// Thought Bubble Icon */}
                 <div className="top-left-title">Thought Bubble</div>
@@ -32,7 +64,7 @@ class Suggestion extends React.Component {
                             <div className="input-group-append">
                                 <button id="suggestionSubmitBtn" className="btn btn-success" type="button" onClick={this.onSubmit}>Submit</button>
                             </div>
-                            <div id="active-timer"/>
+                        <div id="active-timer">{this.state.activeTimer.display()}</div>
                     </div>
                 </div>
 
