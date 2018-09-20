@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+
 interface IAttributes {
     hostName: string | undefined,
     hours: string | undefined,
@@ -11,7 +12,11 @@ interface IAttributes {
     userPassword: string | undefined
 }
 
-class EntryPoint extends React.Component<{}, IAttributes> {
+interface IEntryPoint {
+    onSetTarget: (pageName: string) => void
+}
+
+class EntryPoint extends React.Component<{}, IAttributes, IEntryPoint> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -75,7 +80,7 @@ class EntryPoint extends React.Component<{}, IAttributes> {
     public render() {
         return (
             <div>
-                <button onClick={this.onHostRoom} className="button" id="hostButton" data-toggle="modal" data-target="#exampleModalLong"
+                <button className="button" id="hostButton" data-toggle="modal" data-target="#exampleModalLong"
                         data-whatever="@host">Host a Room
                 </button>
                 <button onClick={this.onJoinRoom} className="button" id="userButton" data-toggle="modal" data-target="#exampleModal"
@@ -125,6 +130,7 @@ class EntryPoint extends React.Component<{}, IAttributes> {
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <button type="button" onClick={this.hostSubmission} id="hostStart" className="btn btn-primary">Start Meeting</button>
+
                             </div>
                         </div>
                     </div>

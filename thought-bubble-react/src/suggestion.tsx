@@ -1,20 +1,26 @@
 import * as React from 'react';
 import Timer from './timer';
+import BubbleComponent from './BubbleComponent';
 
-interface IAppState {
+import { IBubble } from './IBubble';
+
+interface ISuggestion {
     meetingTimer: Timer,
     activeTimer: Timer,
     meetingTime: string,
     activeTime: string,
-    intervalID: any
+    intervalID: any,
+    bubbles: IBubble[]
 }
 
-class Suggestion extends React.Component<{}, IAppState> {
+class Suggestion extends React.Component<{}, ISuggestion> {
     constructor(props: any) {
         super(props);
         this.state = {
             activeTime: "",
             activeTimer: new Timer(0,5,0),
+            bubbles:[
+            ],
             intervalID: 0,
             meetingTime: "",
             meetingTimer: new Timer(1,0,0)
@@ -26,10 +32,17 @@ class Suggestion extends React.Component<{}, IAppState> {
         this.setState({intervalID: intervalId});
     }
 
+    public onSubmit = () => {
+        const placeholderBubble = {
+            description: "Test Description",
+            id: this.state.bubbles.length,
+            submitter: "Test Joey",
+            title: "Test Title"
+        }
+        const newBubblesArray = this.state.bubbles;
+        newBubblesArray.push(placeholderBubble);
 
-
-    public onSubmit() {
-        console.log('submit');
+        this.setState({bubbles: newBubblesArray});
     }
 
     public updateTimers = () => {
@@ -69,7 +82,16 @@ class Suggestion extends React.Component<{}, IAppState> {
                 </div>
 
                 {/*//  Thought bubbles -->*/}
-                <div id="bubbleContainer1" className="d-flex flex-wrap justify-content-start bContainerOffset"/>
+                <div id="bubbleContainer1" className="d-flex flex-wrap justify-content-start bContainerOffset">
+                    {this.state.bubbles.map(
+                        bubble => <BubbleComponent key={bubble.id}
+                                                   id={bubble.id}
+                                                   title={bubble.title}
+                                                   description = {bubble.description}
+                                                   submitter = {bubble.submitter}
+                        />
+                    )}
+                </div>
                 <div id="bubbleContainer2" className="d-flex flex-wrap justify-content-start bubble2"/>
             </div>
         );
