@@ -26,8 +26,6 @@ class Suggestion extends React.Component<{}, IAppState> {
         this.setState({intervalID: intervalId});
     }
 
-
-
     public onSubmit() {
         console.log('submit');
     }
