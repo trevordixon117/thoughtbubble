@@ -16,7 +16,7 @@ interface IEntryPoint {
     onSetTarget: (pageName: string) => void
 }
 
-class EntryPoint extends React.Component<{}, IAttributes, IEntryPoint> {
+class EntryPoint extends React.Component<IEntryPoint, IAttributes> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -32,15 +32,7 @@ class EntryPoint extends React.Component<{}, IAttributes, IEntryPoint> {
     }
 
     public onHostRoom = () => {
-        /*
-        *
-        *
-        * THE LINE BELOW IS BREAKING THINGS--FIX!!
-        *
-        *
-        *
-        * */
-        // this.props.onSetTarget('suggestion');
+        this.props.onSetTarget('suggestion');
         this.setState({isHost: true});
         console.log("isHost = " + this.state.isHost);
     }
@@ -138,7 +130,7 @@ class EntryPoint extends React.Component<{}, IAttributes, IEntryPoint> {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" onClick={this.hostSubmission} id="hostStart" className="btn btn-primary">Start Meeting</button>
+                                <button type="button" onClick={this.onHostRoom} id="hostStart" className="btn btn-primary">Start Meeting</button>
 
                             </div>
                         </div>

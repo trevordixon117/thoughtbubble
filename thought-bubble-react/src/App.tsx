@@ -1,4 +1,6 @@
 import * as React from 'react';
+// @ts-ignore
+// @ts-ignore
 import {
     HashRouter,
     Redirect,
@@ -6,52 +8,54 @@ import {
 } from 'react-router-dom';
 
 import Suggestion from './suggestion';
-// import EntryPoint from './entrypoint';
+import EntryPoint from './entrypoint';
 import Decision from './decision';
 
 interface IAppState {
-    currentPage: string | null,
-    targetPage: string | null
+    currentPage: JSX.Element,
+    targetPage: JSX.Element
 }
 
 class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            currentPage: null,
-            targetPage: null
+            currentPage: <div/>,
+            targetPage: <div/>
         }
     }
 
     public loadPage = (pageName: string) => {
         console.log('load ' + pageName);
-        this.setState({targetPage: pageName});
+        if(pageName === 'entrypoint') {
+            console.log('loading entrypoint');
+            this.setState({currentPage: <HashRouter><Redirect to='/' /></HashRouter>});
+            this.setState({targetPage: <HashRouter><Redirect to='/' /></HashRouter>});
+        }
+        else if(pageName === 'suggestion') {
+            console.log('r2');
+            this.setState({currentPage: <HashRouter><Redirect to='/suggestion' /></HashRouter>});
+            this.setState( {targetPage: <HashRouter><Redirect to='/suggestion' /></HashRouter>});
+        }
+        else if(pageName === 'decision') {
+            console.log('r3');
+            this.setState({currentPage: <HashRouter><Redirect to='/decision' /></HashRouter>});
+            this.setState({targetPage: <HashRouter><Redirect to='/decision' /></HashRouter>});
+        }
     }
 
     public updateCurrentPage = (page: string) => {
-        this.setState({currentPage: page});
+        this.setState({currentPage: <div/>});
     }
 
     public render() {
-        if(this.state.targetPage === this.state.currentPage) {
+        if(this.state.targetPage.toString() === this.state.currentPage.toString()) {
             console.log('r1');
             // do nothing--we're already at the right page
         }
-        else if(this.state.targetPage === 'entrypoint') {
-            console.log('loading entrypoint');
-            return <HashRouter><Redirect to='/' /></HashRouter>;
-        }
-        else if(this.state.targetPage === 'suggestion') {
-            console.log('r2');
-            return <HashRouter><Redirect to='/suggestion' /></HashRouter>;
-        }
-        else if(this.state.targetPage === 'decision') {
-            console.log('r3');
-            return <HashRouter><Redirect to='/decision' /></HashRouter>;
-        }
         else {
-            console.log('targetPage: ' + this.state.targetPage);
-            console.log('currentPage: ' + this.state.currentPage);
+            console.log('loading '+this.state.currentPage.toString());
+            return this.state.currentPage;
         }
 
         return (
@@ -59,11 +63,11 @@ class App extends React.Component<{}, IAppState> {
                 <div>
 
                     <div className="content">
-                        {/*<Route*/}
-                               {/*path="/"*/}
-                               {/*render={(props) => <EntryPoint {...props} onSetTarget={this.loadPage} />}*/}
-                               {/*/>*/}
-                        <Route path="/" component={Suggestion}/>
+                        <Route
+                               path="/"
+                               render={(props) => <EntryPoint {...props} onSetTarget={this.loadPage} />}
+                               />
+                        <Route path="/suggestion" component={Suggestion}/>
                         <Route path="/decision" component={Decision}/>
                     </div>
                 </div>
