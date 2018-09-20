@@ -48,78 +48,19 @@ class EntryPoint extends React.Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label>Hour select:</label>
-                                        <select className="form-control" id="exampleSelect1">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                            <option>17</option>
-                                            <option>18</option>
-                                            <option>19</option>
-                                            <option>20</option>
-                                            <option>21</option>
-                                            <option>22</option>
-                                            <option>23</option>
-                                            <option>24</option>
-                                        </select>
+                                        <label>Hours:</label>
+                                        <input type="number" name="hours" min="0" max="24"/>
                                     </div>
+                                    
                                     <div className="form-group">
-                                        <label className="exampleSelect1">Minute select:</label>
-                                        <select className="form-control" id="exampleSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                            <option>17</option>
-                                            <option>18</option>
-                                            <option>19</option>
-                                            <option>20</option>
-                                            <option>21</option>
-                                            <option>22</option>
-                                            <option>23</option>
-                                            <option>24</option>
-                                            <option>25</option>
-                                            <option>26</option>
-                                            <option>27</option>
-                                            <option>28</option>
-                                            <option>29</option>
-                                            <option>30</option>
-
-                                        </select>
+                                        <label>Minutes:</label>
+                                        <input type="number" name="minutes" min="0" max="59"/>
                                     </div>
                                 </form>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" id="hostStart"
-                                        className="btn btn-primary">Start Meeting
-                                </button>
+                                <button type="button" id="hostStart" className="btn btn-primary">Start Meeting</button>
                             </div>
                         </div>
                     </div>
@@ -156,9 +97,7 @@ class EntryPoint extends React.Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" className="btn btn-primary btn-info">Join
-                                    Room
-                                </button>
+                                <button type="button" className="btn btn-primary btn-info">Join Room</button>
                             </div>
                         </div>
                     </div>

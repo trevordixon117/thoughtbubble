@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import './stylesheets/entrypoint.css';
+import "./stylesheets/decision.css";
 import './stylesheets/suggestion.css';
 import './stylesheets/bubble.css';
 
