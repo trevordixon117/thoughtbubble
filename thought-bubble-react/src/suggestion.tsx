@@ -10,7 +10,9 @@ interface ISuggestion {
     meetingTime: string,
     activeTime: string,
     intervalID: any,
-    bubbles: IBubble[]
+    bubbles: IBubble[],
+    thoughtDisplay: string,
+    thoughtEntry: string
 }
 
 class Suggestion extends React.Component<{}, ISuggestion> {
@@ -19,11 +21,12 @@ class Suggestion extends React.Component<{}, ISuggestion> {
         this.state = {
             activeTime: "",
             activeTimer: new Timer(0,5,0),
-            bubbles:[
-            ],
+            bubbles:[],
             intervalID: 0,
             meetingTime: "",
-            meetingTimer: new Timer(1,0,0)
+            meetingTimer: new Timer(1,0,0),
+            thoughtDisplay: "Click on a thought to view its contents...",
+            thoughtEntry: ""
         };
     }
 
@@ -34,8 +37,9 @@ class Suggestion extends React.Component<{}, ISuggestion> {
 
     public onSubmit = () => {
         const placeholderBubble = {
-            description: "Test Description",
+            description: this.state.thoughtEntry,
             id: this.state.bubbles.length,
+            onClick: this.onBubbleSelect,
             submitter: "Test Joey",
             title: "Test Title"
         }
@@ -43,6 +47,15 @@ class Suggestion extends React.Component<{}, ISuggestion> {
         newBubblesArray.push(placeholderBubble);
 
         this.setState({bubbles: newBubblesArray});
+    }
+
+    public updateEntry = (event : any) => {
+        this.setState({thoughtEntry: event.target.value});
+    }
+
+    public onBubbleSelect = (id: number) => {
+        console.log(id);
+        this.setState({thoughtDisplay: this.state.bubbles[id].description});
     }
 
     public updateTimers = () => {
@@ -63,7 +76,7 @@ class Suggestion extends React.Component<{}, ISuggestion> {
                 <div className="top-left-title">Thought Bubble</div>
 
                 {/*// Thought Summary*/}
-                <div className="top-middle-banner p-1"><i id="thoughtDisplay">Click on a thought to view its contents...</i></div>
+                <div className="top-middle-banner p-1"><i id="thoughtDisplay">{this.state.thoughtDisplay}</i></div>
 
                 {/*// Problem */}
                 <h1 id="problemBox" className="ProblemBox display-1"> This is an example problem. <br/> What is the solution? </h1>
@@ -73,7 +86,7 @@ class Suggestion extends React.Component<{}, ISuggestion> {
 
                     {/*// Thought input */}
                     <div className="input-group input-group-lg footer mb-3 flex-grow-1">
-                        <input type="text" id="suggestionBox" className="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2"/>
+                        <input onChange={this.updateEntry} type="text" id="suggestionBox" className="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2"/>
                             <div className="input-group-append">
                                 <button id="suggestionSubmitBtn" className="btn btn-success" type="button" onClick={this.onSubmit}>Submit</button>
                             </div>
@@ -89,6 +102,7 @@ class Suggestion extends React.Component<{}, ISuggestion> {
                                                    title={bubble.title}
                                                    description = {bubble.description}
                                                    submitter = {bubble.submitter}
+                                                   onClick = {this.onBubbleSelect}
                         />
                     )}
                 </div>

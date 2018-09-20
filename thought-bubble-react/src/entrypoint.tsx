@@ -9,9 +9,6 @@ class EntryPoint extends React.Component<IEntryPoint> {
         super(props);
     }
 
-
-
-
     public onHostRoom = () => {
         this.props.onSetTarget('suggestion');
     }
