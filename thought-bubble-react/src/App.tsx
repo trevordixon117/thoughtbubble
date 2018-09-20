@@ -15,12 +15,12 @@ class App extends React.Component {
         return (
             <HashRouter>
                 <div>
-                    <NavLink to="/entrypoint">Entry Point</NavLink>
+                    <NavLink to="/">Entry Point</NavLink>
                     <NavLink to="/suggestion">Suggestion</NavLink>
                     <NavLink to="/decision">Decision</NavLink>
 
                     <div className="content">
-                        <Route path="/entrypoint" component={EntryPoint}/>
+                        <Route exact={true} path="/" component={EntryPoint}/>
                         <Route path="/suggestion" component={Suggestion}/>
                         <Route path="/decision" component={Decision}/>
                     </div>
