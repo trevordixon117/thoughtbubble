@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be8de27b-227e-460d-ab6c-8547c48bc769" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/BubbleComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BubbleComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IBubble.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/IBubble.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entrypoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entrypoint.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/suggestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/suggestion.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,7 +52,7 @@
           <entry key="html" value="120" />
           <entry key="json" value="76" />
           <entry key="ts" value="41" />
-          <entry key="tsx" value="6406" />
+          <entry key="tsx" value="6474" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -64,7 +61,7 @@
           <entry key="JSON" value="76" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="TypeScript" value="41" />
-          <entry key="TypeScript JSX" value="6406" />
+          <entry key="TypeScript JSX" value="6474" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -90,16 +87,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/entrypoint.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+            <state relative-caret-position="221">
+              <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/suggestion.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
@@ -193,10 +190,10 @@
         <option value="$PROJECT_DIR$/src/PageRedirecter.tsx" />
         <option value="$PROJECT_DIR$/tslint.json" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/entrypoint.tsx" />
         <option value="$PROJECT_DIR$/src/IBubble.ts" />
         <option value="$PROJECT_DIR$/src/BubbleComponent.tsx" />
         <option value="$PROJECT_DIR$/src/suggestion.tsx" />
+        <option value="$PROJECT_DIR$/src/entrypoint.tsx" />
       </list>
     </option>
   </component>
@@ -294,12 +291,12 @@
       <workItem from="1537388440969" duration="1089000" />
       <workItem from="1537389599099" duration="2514000" />
       <workItem from="1537392158196" duration="2256000" />
-      <workItem from="1537452019860" duration="23644000" />
+      <workItem from="1537452019860" duration="23865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28544000" />
+    <option name="totallyTimeSpent" value="28765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -481,13 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entrypoint.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/app3/src/CarComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -539,6 +529,13 @@
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entrypoint.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
         </state>
       </provider>
     </entry>
