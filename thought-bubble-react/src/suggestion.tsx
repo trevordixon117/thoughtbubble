@@ -1,12 +1,16 @@
 import * as React from 'react';
 import Timer from './timer';
+import BubbleComponent from './BubbleComponent';
+
+import { IBubble } from './IBubble';
 
 interface IAppState {
     meetingTimer: Timer,
     activeTimer: Timer,
     meetingTime: string,
     activeTime: string,
-    intervalID: any
+    intervalID: any,
+    bubbles: IBubble[]
 }
 
 class Suggestion extends React.Component<{}, IAppState> {
@@ -17,7 +21,10 @@ class Suggestion extends React.Component<{}, IAppState> {
             activeTimer: new Timer(0,5,0),
             intervalID: 0,
             meetingTime: "",
-            meetingTimer: new Timer(1,0,0)
+            meetingTimer: new Timer(1,0,0),
+            bubbles:[
+                {id:0, title: "No Title", description: "No Description", submitter: "No Joey"},
+            ]
         };
     }
 
@@ -26,10 +33,17 @@ class Suggestion extends React.Component<{}, IAppState> {
         this.setState({intervalID: intervalId});
     }
 
-
-
     public onSubmit() {
-        console.log('submit');
+        var placeholderBubble = {
+            id: 1,
+            title: "Test Title",
+            description: "Test Description",
+            submitter: "Test Joey"
+        }
+        var newBubblesArray = this.state.bubbles;
+        newBubblesArray.push(placeholderBubble);
+
+        this.setState({bubbles: newBubblesArray});
     }
 
     public updateTimers = () => {
@@ -41,6 +55,13 @@ class Suggestion extends React.Component<{}, IAppState> {
         return (
             // <!-- Thought bubbles can scale if we add "transform: scale(0.5)" -->
             <div className="container">
+
+                {this.state.bubbles.map(
+                    x => <BubbleComponent key={x.name}
+                    name={x.name}
+                    picture = {x.picture}
+                    onDeleted = {this.onCarDelete}/>
+                )}
 
                 {/*Total timer*/}
                 <div id="top-right-title">Meeting Time</div>
