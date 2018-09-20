@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Suggestion from './suggestion';
-import EntryPoint from './entrypoint';
+// import EntryPoint from './entrypoint';
 import Decision from './decision';
 
 interface IAppState {
@@ -59,15 +59,13 @@ class App extends React.Component<{}, IAppState> {
                 <div>
 
                     <div className="content">
-                        <Route
-                               path="/"
-                               render={(props) => <EntryPoint {...props} onSetTarget={this.loadPage} />}
-                               />
-                        <Route path="/suggestion" component={Suggestion}/>
+                        {/*<Route*/}
+                               {/*path="/"*/}
+                               {/*render={(props) => <EntryPoint {...props} onSetTarget={this.loadPage} />}*/}
+                               {/*/>*/}
+                        <Route path="/" component={Suggestion}/>
                         <Route path="/decision" component={Decision}/>
                     </div>
-
-                    {content}
                 </div>
             </HashRouter>
         );

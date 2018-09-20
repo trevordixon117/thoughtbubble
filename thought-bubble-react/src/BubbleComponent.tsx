@@ -5,7 +5,7 @@ class BubbleComponent extends React.Component<IBubble> {
   public render() {
     return (
       <div >
-        <div>{this.props.title}</div>
+        <div className='hovicon effect-8'>{this.props.id + 1}</div>
       </div>
     );
   }

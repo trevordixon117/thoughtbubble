@@ -4,7 +4,7 @@ import BubbleComponent from './BubbleComponent';
 
 import { IBubble } from './IBubble';
 
-interface IAppState {
+interface ISuggestion {
     meetingTimer: Timer,
     activeTimer: Timer,
     meetingTime: string,
@@ -13,18 +13,17 @@ interface IAppState {
     bubbles: IBubble[]
 }
 
-class Suggestion extends React.Component<{}, IAppState> {
+class Suggestion extends React.Component<{}, ISuggestion> {
     constructor(props: any) {
         super(props);
         this.state = {
             activeTime: "",
             activeTimer: new Timer(0,5,0),
+            bubbles:[
+            ],
             intervalID: 0,
             meetingTime: "",
-            meetingTimer: new Timer(1,0,0),
-            bubbles:[
-                {id:0, title: "No Title", description: "No Description", submitter: "No Joey"},
-            ]
+            meetingTimer: new Timer(1,0,0)
         };
     }
 
@@ -33,14 +32,14 @@ class Suggestion extends React.Component<{}, IAppState> {
         this.setState({intervalID: intervalId});
     }
 
-    public onSubmit() {
-        var placeholderBubble = {
-            id: 1,
-            title: "Test Title",
+    public onSubmit = () => {
+        const placeholderBubble = {
             description: "Test Description",
-            submitter: "Test Joey"
+            id: this.state.bubbles.length,
+            submitter: "Test Joey",
+            title: "Test Title"
         }
-        var newBubblesArray = this.state.bubbles;
+        const newBubblesArray = this.state.bubbles;
         newBubblesArray.push(placeholderBubble);
 
         this.setState({bubbles: newBubblesArray});
@@ -55,13 +54,6 @@ class Suggestion extends React.Component<{}, IAppState> {
         return (
             // <!-- Thought bubbles can scale if we add "transform: scale(0.5)" -->
             <div className="container">
-
-                {this.state.bubbles.map(
-                    x => <BubbleComponent key={x.name}
-                    name={x.name}
-                    picture = {x.picture}
-                    onDeleted = {this.onCarDelete}/>
-                )}
 
                 {/*Total timer*/}
                 <div id="top-right-title">Meeting Time</div>
@@ -90,7 +82,16 @@ class Suggestion extends React.Component<{}, IAppState> {
                 </div>
 
                 {/*//  Thought bubbles -->*/}
-                <div id="bubbleContainer1" className="d-flex flex-wrap justify-content-start bContainerOffset"/>
+                <div id="bubbleContainer1" className="d-flex flex-wrap justify-content-start bContainerOffset">
+                    {this.state.bubbles.map(
+                        bubble => <BubbleComponent key={bubble.id}
+                                                   id={bubble.id}
+                                                   title={bubble.title}
+                                                   description = {bubble.description}
+                                                   submitter = {bubble.submitter}
+                        />
+                    )}
+                </div>
                 <div id="bubbleContainer2" className="d-flex flex-wrap justify-content-start bubble2"/>
             </div>
         );
