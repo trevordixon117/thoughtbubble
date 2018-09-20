@@ -14,11 +14,11 @@ class App extends React.Component {
         return (
             <HashRouter>
                 <div>
-                    <NavLink to="/">Entry Point</NavLink>
+                    <NavLink to="/entrypoint">Entry Point</NavLink>
                     <NavLink to="/suggestion"> Suggestion</NavLink>
 
                     <div className="content">
-                        <Route path="/" component={EntryPoint}/>
+                        <Route path="/entrypoint" component={EntryPoint}/>
                         <Route path="/suggestion" component={Suggestion}/>
                     </div>
                 </div>
