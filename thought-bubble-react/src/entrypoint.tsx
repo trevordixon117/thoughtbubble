@@ -1,8 +1,19 @@
 import * as React from 'react';
 
-class EntryPoint extends React.Component {
-    public onHostRoom() {
-        console.log('click on host room');
+interface IEntryPoint {
+    onSetTarget: (pageName: string) => void
+}
+
+class EntryPoint extends React.Component<IEntryPoint> {
+    constructor(props: any) {
+        super(props);
+    }
+
+
+
+
+    public onHostRoom = () => {
+        this.props.onSetTarget('suggestion');
     }
 
     public onJoinRoom() {
@@ -11,7 +22,7 @@ class EntryPoint extends React.Component {
     public render() {
         return (
             <div>
-                <button onClick={this.onHostRoom} className="button" id="hostButton" data-toggle="modal" data-target="#exampleModalLong"
+                <button className="button" id="hostButton" data-toggle="modal" data-target="#exampleModalLong"
                         data-whatever="@host">Host a Room
                 </button>
                 <button onClick={this.onJoinRoom} className="button" id="userButton" data-toggle="modal" data-target="#exampleModal"
@@ -60,7 +71,7 @@ class EntryPoint extends React.Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" id="hostStart" className="btn btn-primary">Start Meeting</button>
+                                <button onClick={this.onHostRoom} type="button" id="hostStart" className="btn btn-primary">Start Meeting</button>
                             </div>
                         </div>
                     </div>
