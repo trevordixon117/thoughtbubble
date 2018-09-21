@@ -11,40 +11,26 @@ import Suggestion from './suggestion';
 import EntryPoint from './entrypoint';
 import Decision from './decision';
 
-interface IAppState {
-    currentPage: JSX.Element,
-    targetPage: JSX.Element
-}
-
-class App extends React.Component<{}, IAppState> {
+class App extends React.Component<{}> {
     constructor(props: any) {
         super(props);
-        this.state = {
-            currentPage: <div/>,
-            targetPage: <div/>
-        }
-    }
-
-    public loadPage = (pageName: string) => {
-        console.log('load ' + pageName);
-    }
-
-    public updateCurrentPage = (page: string) => {
-        this.setState({currentPage: <div/>});
     }
 
     public render() {
-
         return (
             <HashRouter>
-                <NavLink to={"/"}>EntryPoint</NavLink>
-                <NavLink to={"/suggestion"}>Suggestion</NavLink>
-                <NavLink to={"/decision"}>Decision</NavLink>
-                
-                <div className="content">
-                    <Route path="/" component={EntryPoint}/>
-                    <Route path="/suggestion" component={Suggestion}/>
-                    <Route path="/decision" component={Decision}/>
+                <div>
+                    <div>   
+                    <NavLink to="/">Entry Point</NavLink>
+                    <NavLink to="/suggestion">Suggestion</NavLink>
+                    <NavLink to="/decision">Decision</NavLink>
+                    </div>
+
+                    <div className="content">
+                        <Route path="/" component={EntryPoint}/>
+                        <Route path="/suggestion" component={Suggestion}/>
+                        <Route path="/decision" component={Decision}/>
+                    </div>
                 </div>
             </HashRouter>
         );
