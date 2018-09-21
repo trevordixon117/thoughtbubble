@@ -20,11 +20,11 @@ class Suggestion extends React.Component<{}, ISuggestion> {
         super(props);
         this.state = {
             activeTime: "",
-            activeTimer: new Timer(0,5,0),
+            activeTimer: new Timer(0,1,0),
             bubbles:[],
             intervalID: 0,
             meetingTime: "",
-            meetingTimer: new Timer(1,0,0),
+            meetingTimer: new Timer(0,1,0),
             thoughtDisplay: "Click on a thought to view its contents...",
             thoughtEntry: ""
         };

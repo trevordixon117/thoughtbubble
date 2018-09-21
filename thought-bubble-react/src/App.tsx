@@ -3,7 +3,7 @@ import * as React from 'react';
 // @ts-ignore
 import {
     HashRouter,
-    Redirect,
+    NavLink,
     Route
 } from 'react-router-dom';
 
@@ -27,21 +27,6 @@ class App extends React.Component<{}, IAppState> {
 
     public loadPage = (pageName: string) => {
         console.log('load ' + pageName);
-        if(pageName === 'entrypoint') {
-            console.log('loading entrypoint');
-            this.setState({currentPage: <HashRouter><Redirect to='/' /></HashRouter>});
-            this.setState({targetPage: <HashRouter><Redirect to='/' /></HashRouter>});
-        }
-        else if(pageName === 'suggestion') {
-            console.log('r2');
-            this.setState({currentPage: <HashRouter><Redirect to='/suggestion' /></HashRouter>});
-            this.setState( {targetPage: <HashRouter><Redirect to='/suggestion' /></HashRouter>});
-        }
-        else if(pageName === 'decision') {
-            console.log('r3');
-            this.setState({currentPage: <HashRouter><Redirect to='/decision' /></HashRouter>});
-            this.setState({targetPage: <HashRouter><Redirect to='/decision' /></HashRouter>});
-        }
     }
 
     public updateCurrentPage = (page: string) => {
@@ -49,27 +34,17 @@ class App extends React.Component<{}, IAppState> {
     }
 
     public render() {
-        if(this.state.targetPage.toString() === this.state.currentPage.toString()) {
-            console.log('r1');
-            // do nothing--we're already at the right page
-        }
-        else {
-            console.log('loading '+this.state.currentPage.toString());
-            return this.state.currentPage;
-        }
 
         return (
             <HashRouter>
-                <div>
-
-                    <div className="content">
-                        <Route
-                               path="/"
-                               render={(props) => <EntryPoint {...props} onSetTarget={this.loadPage} />}
-                               />
-                        <Route path="/suggestion" component={Suggestion}/>
-                        <Route path="/decision" component={Decision}/>
-                    </div>
+                <NavLink to={"/"}>EntryPoint</NavLink>
+                <NavLink to={"/suggestion"}>Suggestion</NavLink>
+                <NavLink to={"/decision"}>Decision</NavLink>
+                
+                <div className="content">
+                    <Route path="/" component={EntryPoint}/>
+                    <Route path="/suggestion" component={Suggestion}/>
+                    <Route path="/decision" component={Decision}/>
                 </div>
             </HashRouter>
         );
