@@ -63,6 +63,12 @@ class Suggestion extends React.Component<{}, ISuggestion> {
         this.setState({activeTime: this.state.activeTimer.tickDown()});
     }
 
+    public handleKeyPress = (e: any) => {
+        if (e.key === 'Enter') {
+            this.onSubmit();
+        }
+    }
+
     public render() {
         return (
             // <!-- Thought bubbles can scale if we add "transform: scale(0.5)" -->
@@ -86,7 +92,7 @@ class Suggestion extends React.Component<{}, ISuggestion> {
 
                     {/*// Thought input */}
                     <div className="input-group input-group-lg footer mb-3 flex-grow-1">
-                        <input onChange={this.updateEntry} type="text" id="suggestionBox" className="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2"/>
+                        <input onChange={this.updateEntry} onKeyPress={this.handleKeyPress} type="text" id="suggestionBox" className="form-control" placeholder="Enter your thought..." aria-label="Enter your thought" aria-describedby="button-addon2"/>
                             <div className="input-group-append">
                                 <button id="suggestionSubmitBtn" className="btn btn-success" type="button" onClick={this.onSubmit}>Submit</button>
                             </div>
